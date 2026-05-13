@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>intelectual game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <h1 class="titulo-jogo">🐍 intelectual game</h1>
+
+        <div class="controles-container">
+            <div class="grupo-controles">
+                <button id="btn-iniciar" class="btn">Iniciar / Reiniciar</button>
+                <button id="btn-modo" class="btn">Alternar Modo</button>
+            </div>
+
+            <div class="grupo-controles">
+                <label for="input-bg" class="btn">Imagem de Fundo</label>
+                <input id="input-bg" type="file" accept="image/*" class="input-escondido">
+                
+                <label for="input-musica" class="btn">Escolher Música</label>
+                <input type="file" id="input-musica" accept="audio/*" class="input-escondido">
+                
+                <div class="controle-volume">
+                    <label for="volume-musica">Volume:</label>
+                    <input type="range" id="volume-musica" min="0" max="100" value="50">
+                </div>
+            </div>
+
+            <div class="grupo-controles info">
+                <p>Controles: ← → ↑ ↓ ou A W S D</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="principal">
+        <div class="canvas-wrap">
+            <canvas id="jogo"></canvas>
+            <div id="overlay" class="overlay">
+                <div id="mensagem">PRESSIONE INICIAR</div>
+                <div id="resultado"></div>
+                <button id="btn-play-again" class="btn">Jogar de novo</button>
+            </div>
+        </div>
+        <aside class="placar">
+            <div class="placar-item"><strong>Score:</strong> <span id="score">0</span></div>
+            <div class="placar-item"><strong>Velocidade:</strong> <span id="fps">8</span></div>
+            <div id="recorde-fixo" class="placar-item recorde">🏆 Recorde: <span id="recorde">0</span></div>
+        </aside>
+    </main>
+
+    <footer class="rodape">
+        <p>Desenvolvido por Emanuelle</p>
+    </footer>
+    
+    <audio id="player-musica" loop></audio>
+
+    <script src="jogo.js"></script>
+</body>
+</html>

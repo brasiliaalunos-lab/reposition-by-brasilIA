@@ -1,0 +1,138 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background: radial-gradient(circle at center, #5876fa 0%, #7f91b7 100%);
+  color: #06505f;
+  transition: background 0.6s, color 0.4s;
+}
+
+body.claro {
+  background: radial-gradient(circle at center, #755ef3ad 0%, #ffffff36 100%);
+  color: #082542;
+}
+
+header.topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 20px #00e0ff80;
+  border-bottom: 1px solid #00e0ff30;
+}
+
+header.topo h1 {
+  margin: 0;
+  font-size: 22px;
+  color: #00ffe7;
+  text-shadow: 0 0 8px #00ffe7;
+}
+
+button, .file-label {
+  background: #00ffe7;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: #0b1220;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #00ffe7aa;
+}
+
+button:hover, .file-label:hover {
+  box-shadow: 0 0 20px #00ffe7;
+}
+
+.file-label input { display: none; }
+
+.principal {
+  display: flex;
+  gap: 18px;
+  padding: 18px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.canvas-wrap {
+  position: relative;
+  flex: 1;
+  max-width: 1000px;
+}
+
+canvas#jogo {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 200px);
+  background: #1a275c;
+  border-radius: 14px;
+  box-shadow: 0 0 40px #00ffe760 inset, 0 0 20px #00ffe730;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 14px;
+  color: #00ffe7;
+  text-align: center;
+}
+
+.hidden { display: none; }
+
+.overlay #mensagem {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px #00ffe7;
+}
+
+.overlay #resultado {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+aside.placar {
+  width: 220px;
+  background: rgba(0,255,255,0.05);
+  border: 1px solid #00ffe720;
+  padding: 12px;
+  border-radius: 10px;
+  color: #9eeaff;
+  height: fit-content;
+  box-shadow: 0 0 15px #00ffe740 inset;
+}
+
+.placar-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 15px;
+}
+
+#recorde-fixo {
+  text-align: center;
+  font-size: 16px;
+  color: #6d0e0e;
+  text-shadow: 0 0 8px #5e2830;
+  margin-top: 12px;
+  animation: brilhar 2s infinite alternate;
+}
+@keyframes brilhar {
+  0% { text-shadow: 0 0 8px #400707; }
+  100% { text-shadow: 0 0 20px #700414; }
+}
+
+footer.rodape {
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+  color: #7ee2ff;
+}
